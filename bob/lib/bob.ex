@@ -1,34 +1,27 @@
+
 defmodule Bob do
+  @spec hey(input :: String.t()) :: String.t()
   def hey(input) do
+    input = String.trim(input)
+
     cond do
-      yell(input) && ask(input) -> "Calm down, I know what I'm doing!"
-
-      ask(input) -> "Sure."
-
-      yell(input) -> "Whoa, chill out!"
-
-      is_alnum(input) -> "Whatever."
-
-      true -> "Fine. Be that way!"
+      silence?(input) -> "Fine. Be that way!"
+      forceful_question?(input) -> "Calm down, I know what I'm doing!"
+      question?(input) -> "Sure."
+      shouting?(input) -> "Whoa, chill out!"
+      true -> "Whatever."
     end
   end
 
-  defp ends_with(input,alnum) do
-    String.trim(input)
-      |>String.ends_with?(alnum)
+  defp silence?(input), do: input == ""
+
+  defp question?(input), do: String.ends_with?(input, "?")
+
+  defp shouting?(input) do
+    String.upcase(input) == input and String.downcase(input) != input
   end
 
-  defp yell(input) do
-    String.match?(input,~r/\p{Lu}{4,}/u) ||
-    String.match?(input,~r/\p{Lu}{2,}/u) &&
-    ends_with(input,"!")
-  end
-
-  defp is_alnum(input) do
-    String.match?(input,~R/[[:alnum:]]/)
-  end
-
-  defp ask(input) do
-    ends_with(input,"?")
+  defp forceful_question?(input) do
+    question?(input) and shouting?(input)
   end
 end
