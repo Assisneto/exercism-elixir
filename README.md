@@ -1,6 +1,6 @@
 # Difficulty Level
 
-## Resoved: 7/93
+## Resoved: 8/93
 
 ### Difficulty: 1
 
@@ -70,7 +70,7 @@
   
 ### Difficulty: 4
 
-* [ ]   list ops
+* [X]   list ops
 * [ ]   tournament
 * [ ]   meetup
 * [ ]   parallel letter frequency
