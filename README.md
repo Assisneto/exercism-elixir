@@ -1,6 +1,6 @@
 # Difficulty Level
 
-## Resoved: 8/93
+## Resoved: 9/93
 
 ### Difficulty: 1
 
@@ -13,7 +13,7 @@
 * [X]   rna transcription
 * [X]   word count
 * [X]   bob
-* [ ]   nucleotide count
+* [X]   nucleotide count
 * [ ]   secret handshake
 * [ ]   rotational cipher
 * [ ]   strain
